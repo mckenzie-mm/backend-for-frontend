@@ -10,12 +10,13 @@ Imagine an e-commerce platform that relies on three distinct downstream microser
 1. Catalog Service: Returns product titles, descriptions, and heavy image arrays.
 2. Pricing Service: Returns the base price, active discounts, and tax info.
 3. Inventory Service: Returns exact stock counts across various warehouses.
+   
 We want to display this product data on both a Desktop Web App (high bandwidth, large screen) and a Mobile App (low bandwidth, cellular connection, small screen).
 Downstream Responses (What the Microservices Return)
 If a client queries the core microservices directly, they get a flood of raw data:
-• Catalog API (/products/123): Contains 50 fields, including high-res 4K image URLs.
-• Pricing API (/prices/123): Contains complex breakdown variables.
-• Inventory API (/stocks/123): Returns a map of 20 regional warehouse stock levels.
+  * Catalog API (/products/123): Contains 50 fields, including high-res 4K image URLs.
+  * Pricing API (/prices/123): Contains complex breakdown variables.
+  * Inventory API (/stocks/123): Returns a map of 20 regional warehouse stock levels.
 
 ### Code Example: Implementing a Web BFF vs. Mobile BFF
 
